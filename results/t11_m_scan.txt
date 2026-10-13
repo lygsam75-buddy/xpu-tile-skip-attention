@@ -1,0 +1,29 @@
+device = Intel(R) Arc(TM) Pro B70 Graphics
+batch=343(≈MT)  K=128(≈head_dim)  固定 N，扫 M
+
+[扫描1] bmm: batch=343 K=128 N=1088，扫 M（这组形状 = einsum 方案的 per-head GEMM）
+   M                ms    TFLOP/s
+   64             0.30       20.1
+   128            0.41       30.1
+   256            0.62       39.3
+   512            1.04       47.2
+   1024           1.86       52.6
+
+[扫描2] bmm: batch=343 K=128 N=8192，扫 M
+   M                ms    TFLOP/s
+   64             2.10       21.9
+   256            4.43       41.6
+   1024          13.27       55.5
+
+[扫描3] 单发 GEMM（batch=1，大 M 大 N），对照硬件上限
+   shape                    ms    TFLOP/s
+   64x1088x128            0.04        0.5
+   512x1088x128           0.04        3.8
+   4096x4096x128          0.08       56.6
+   8192x8192x128          0.33       51.7
+
+[对照] 各方案在 S=21952 稀疏 attention 上的等效 TFLOP/s（FLOPs=685 GFLOP）
+   稠密 SDPA           142ms ->   4.8 TFLOP/s（M=21952 大）
+   Triton 内核 w8       37.4ms ->  18.3 TFLOP/s
+   einsum 按head       80.9ms ->   8.5 TFLOP/s（M=64）
+   gather+SDPA chunk1 256.8ms ->   2.7 TFLOP/s（M=64）

@@ -1,0 +1,46 @@
+==============================================================================
+ENVIRONMENT
+==============================================================================
+  device            : Intel(R) Arc(TM) Pro B70 Graphics
+  total memory      : 31.16 GiB
+  torch             : 2.12.0+xpu
+  triton            : 3.7.1
+  xpu backend       : 20250302
+  sub-group sizes   : 2
+  measured module   : vsa_kernel.py  sha256[:16] = 8b85c9c6b1c62f0e
+
+==============================================================================
+1. NUMERICS  (kernel vs per-query-block SDPA, the exact target semantics)
+==============================================================================
+  [torch.bfloat16] S=21952  K_SEL=43   sampled 12 blocks
+       max_abs=9.766e-04  max_rel=6.024e-03  min_cosine=0.999999  OK
+  [torch.bfloat16] S=44736  K_SEL=76   sampled 12 blocks
+       max_abs=4.883e-04  max_rel=4.237e-03  min_cosine=0.999999  OK
+  [torch.float32] S=8192   K_SEL=17   sampled 8 blocks
+       max_abs=2.978e-04  max_rel=8.919e-04  min_cosine=1.000000  OK
+
+==============================================================================
+2. PER-LAYER LATENCY AT REAL H3 SHAPES
+==============================================================================
+
+0.5MP  928x512x124f   S=21952  MT=343  K_SEL=43  (keep=12.5%)
+  path                     ms/layer        min        max     TFLOP/s*
+  dense SDPA                 142.36     129.15     142.66         97.1
+  torch gather (fallback)     615.72     615.64     615.81          2.8
+  XPU kernel (shipped)       116.49     116.42     116.82         14.9
+  * TFLOP/s computed on each path's OWN FLOP count, so 'dense' and the
+    sparse paths are not directly comparable in that column.
+  >> kernel vs dense      : 1.22x
+  >> kernel vs gather     : 5.29x
+
+1.03MP 1344x768x124f   S=44736  MT=699  K_SEL=76  (keep=10.9%)
+  path                     ms/layer        min        max     TFLOP/s*
+  dense SDPA                 600.17     598.04     600.33         95.6
+  torch gather (fallback)    2158.71    2157.89    2159.31          2.9
+  XPU kernel (shipped)       526.63     526.39     526.90         11.8
+  * TFLOP/s computed on each path's OWN FLOP count, so 'dense' and the
+    sparse paths are not directly comparable in that column.
+  >> kernel vs dense      : 1.14x
+  >> kernel vs gather     : 4.10x
+
+done.

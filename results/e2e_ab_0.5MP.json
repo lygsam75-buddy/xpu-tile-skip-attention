@@ -1,0 +1,375 @@
+[
+ {
+  "variant": "dense",
+  "keep": null,
+  "use_kernel": false,
+  "shots": [
+   {
+    "shot": 1,
+    "client_sec": 317.42,
+    "completed": true,
+    "error": "",
+    "steps": [],
+    "summary": [],
+    "plan": [],
+    "kernel_ok": [],
+    "kernel_fail": 0,
+    "server_sec": 312.67,
+    "exception": 0,
+    "oom": 0,
+    "s_per_it": [
+     10.32,
+     9.41,
+     9.11,
+     8.97,
+     9.15
+    ],
+    "load_shape": [
+     {
+      "usable": 25967.64,
+      "loaded": 4966.19,
+      "offloaded": 0.0,
+      "patches": 0
+     },
+     {
+      "usable": 22998.9,
+      "loaded": 19996.14,
+      "offloaded": 0.0,
+      "patches": 0
+     },
+     {
+      "usable": 5880.4,
+      "loaded": 577.08,
+      "offloaded": 0.0,
+      "patches": 0
+     },
+     {
+      "usable": 5478.21,
+      "loaded": 4966.19,
+      "offloaded": 0.0,
+      "patches": 0
+     }
+    ]
+   },
+   {
+    "shot": 2,
+    "client_sec": 51.84,
+    "completed": true,
+    "error": "",
+    "steps": [],
+    "summary": [],
+    "plan": [],
+    "kernel_ok": [],
+    "kernel_fail": 0,
+    "server_sec": 51.4,
+    "exception": 0,
+    "oom": 0,
+    "s_per_it": [
+     8.72,
+     8.75,
+     8.77,
+     8.78,
+     8.77
+    ],
+    "load_shape": [
+     {
+      "usable": 5880.4,
+      "loaded": 577.08,
+      "offloaded": 0.0,
+      "patches": 0
+     },
+     {
+      "usable": 5478.21,
+      "loaded": 4966.19,
+      "offloaded": 0.0,
+      "patches": 0
+     }
+    ]
+   }
+  ],
+  "width": 928,
+  "height": 512,
+  "frames": 124,
+  "vsa_node": null,
+  "ok": 2,
+  "steady_client_sec": 51.84,
+  "steady_server_sec": 51.4,
+  "steady_s_per_it": 8.77,
+  "kernel_ok": false,
+  "status": "ok"
+ },
+ {
+  "variant": "kernel",
+  "keep": 5.0,
+  "use_kernel": true,
+  "shots": [
+   {
+    "shot": 1,
+    "client_sec": 75.94,
+    "completed": true,
+    "error": "",
+    "steps": [
+     [
+      "0",
+      "dense"
+     ],
+     [
+      "1",
+      "sparse"
+     ],
+     [
+      "2",
+      "sparse"
+     ],
+     [
+      "3",
+      "sparse"
+     ]
+    ],
+    "summary": [
+     [
+      "0",
+      "2.1",
+      "50",
+      "0.042",
+      "dense"
+     ],
+     [
+      "1",
+      "10.6",
+      "50",
+      "0.213",
+      "sparse"
+     ],
+     [
+      "2",
+      "2.2",
+      "50",
+      "0.043",
+      "sparse"
+     ]
+    ],
+    "plan": [
+     "seq=18526 padded=21952 tiles=343 prefix_tiles=23"
+    ],
+    "kernel_ok": [
+     "43"
+    ],
+    "kernel_fail": 0,
+    "server_sec": 74.97,
+    "exception": 0,
+    "oom": 0,
+    "s_per_it": [
+     8.83,
+     14.8,
+     12.98,
+     12.15,
+     12.37
+    ],
+    "load_shape": [
+     {
+      "usable": 5880.09,
+      "loaded": 577.08,
+      "offloaded": 0.0,
+      "patches": 0
+     },
+     {
+      "usable": 5477.9,
+      "loaded": 4966.19,
+      "offloaded": 0.0,
+      "patches": 0
+     }
+    ]
+   },
+   {
+    "shot": 2,
+    "client_sec": 57.84,
+    "completed": true,
+    "error": "",
+    "steps": [],
+    "summary": [
+     [
+      "3",
+      "2.2",
+      "50",
+      "0.043",
+      "sparse"
+     ]
+    ],
+    "plan": [],
+    "kernel_ok": [],
+    "kernel_fail": 0,
+    "server_sec": 57.42,
+    "exception": 0,
+    "oom": 0,
+    "s_per_it": [
+     8.89,
+     10.01,
+     10.4,
+     10.59,
+     10.36
+    ],
+    "load_shape": [
+     {
+      "usable": 5880.09,
+      "loaded": 577.08,
+      "offloaded": 0.0,
+      "patches": 0
+     },
+     {
+      "usable": 5477.9,
+      "loaded": 4966.19,
+      "offloaded": 0.0,
+      "patches": 0
+     }
+    ]
+   }
+  ],
+  "width": 928,
+  "height": 512,
+  "frames": 124,
+  "vsa_node": "138",
+  "ok": 2,
+  "steady_client_sec": 57.84,
+  "steady_server_sec": 57.42,
+  "steady_s_per_it": 10.36,
+  "kernel_ok": false,
+  "status": "ok"
+ },
+ {
+  "variant": "torch",
+  "keep": 5.0,
+  "use_kernel": false,
+  "shots": [
+   {
+    "shot": 1,
+    "client_sec": 109.12,
+    "completed": true,
+    "error": "",
+    "steps": [
+     [
+      "0",
+      "dense"
+     ],
+     [
+      "1",
+      "sparse"
+     ],
+     [
+      "2",
+      "sparse"
+     ],
+     [
+      "3",
+      "sparse"
+     ]
+    ],
+    "summary": [
+     [
+      "0",
+      "2.1",
+      "50",
+      "0.041",
+      "dense"
+     ],
+     [
+      "1",
+      "2.5",
+      "50",
+      "0.051",
+      "sparse"
+     ],
+     [
+      "2",
+      "2.4",
+      "50",
+      "0.048",
+      "sparse"
+     ]
+    ],
+    "plan": [
+     "seq=18526 padded=21952 tiles=343 prefix_tiles=23"
+    ],
+    "kernel_ok": [],
+    "kernel_fail": 0,
+    "server_sec": 108.54,
+    "exception": 0,
+    "oom": 0,
+    "s_per_it": [
+     8.84,
+     18.93,
+     22.15,
+     23.68,
+     21.71
+    ],
+    "load_shape": [
+     {
+      "usable": 5880.09,
+      "loaded": 577.08,
+      "offloaded": 0.0,
+      "patches": 0
+     },
+     {
+      "usable": 5477.9,
+      "loaded": 4966.19,
+      "offloaded": 0.0,
+      "patches": 0
+     }
+    ]
+   },
+   {
+    "shot": 2,
+    "client_sec": 103.49,
+    "completed": true,
+    "error": "",
+    "steps": [],
+    "summary": [
+     [
+      "3",
+      "2.5",
+      "50",
+      "0.049",
+      "sparse"
+     ]
+    ],
+    "plan": [],
+    "kernel_ok": [],
+    "kernel_fail": 0,
+    "server_sec": 103.08,
+    "exception": 0,
+    "oom": 0,
+    "s_per_it": [
+     8.91,
+     18.98,
+     22.2,
+     23.72,
+     21.76
+    ],
+    "load_shape": [
+     {
+      "usable": 5880.09,
+      "loaded": 577.08,
+      "offloaded": 0.0,
+      "patches": 0
+     },
+     {
+      "usable": 5477.9,
+      "loaded": 4966.19,
+      "offloaded": 0.0,
+      "patches": 0
+     }
+    ]
+   }
+  ],
+  "width": 928,
+  "height": 512,
+  "frames": 124,
+  "vsa_node": "138",
+  "ok": 2,
+  "steady_client_sec": 103.49,
+  "steady_server_sec": 103.08,
+  "steady_s_per_it": 21.76,
+  "kernel_ok": false,
+  "status": "ok"
+ }
+]

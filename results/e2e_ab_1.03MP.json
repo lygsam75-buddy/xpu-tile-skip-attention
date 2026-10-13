@@ -1,0 +1,257 @@
+[
+ {
+  "variant": "dense",
+  "keep": null,
+  "use_kernel": false,
+  "shots": [
+   {
+    "shot": 1,
+    "client_sec": 474.28,
+    "completed": true,
+    "error": "",
+    "steps": [],
+    "summary": [],
+    "plan": [],
+    "kernel_ok": [],
+    "kernel_fail": 0,
+    "server_sec": 470.14,
+    "exception": 0,
+    "oom": 0,
+    "s_per_it": [
+     56.06,
+     42.55,
+     38.26,
+     36.26,
+     38.88
+    ],
+    "load_shape": [
+     {
+      "usable": 21871.64,
+      "loaded": 4966.19,
+      "offloaded": 0.0,
+      "patches": 0
+     },
+     {
+      "usable": 14497.29,
+      "loaded": 14276.77,
+      "offloaded": 5719.38,
+      "patches": 0
+     },
+     {
+      "usable": 7538.16,
+      "loaded": 577.08,
+      "offloaded": 0.0,
+      "patches": 0
+     },
+     {
+      "usable": 6796.01,
+      "loaded": 4966.19,
+      "offloaded": 0.0,
+      "patches": 0
+     }
+    ]
+   },
+   {
+    "shot": 2,
+    "client_sec": 163.78,
+    "completed": true,
+    "error": "",
+    "steps": [],
+    "summary": [],
+    "plan": [],
+    "kernel_ok": [],
+    "kernel_fail": 0,
+    "server_sec": 161.15,
+    "exception": 0,
+    "oom": 0,
+    "s_per_it": [
+     33.15,
+     33.15,
+     33.16,
+     33.15,
+     33.15
+    ],
+    "load_shape": [
+     {
+      "usable": 14440.57,
+      "loaded": 14220.05,
+      "offloaded": 5776.09,
+      "patches": 0
+     },
+     {
+      "usable": 7518.43,
+      "loaded": 577.08,
+      "offloaded": 0.0,
+      "patches": 0
+     },
+     {
+      "usable": 6788.12,
+      "loaded": 4966.19,
+      "offloaded": 0.0,
+      "patches": 0
+     }
+    ]
+   }
+  ],
+  "width": 1344,
+  "height": 768,
+  "frames": 124,
+  "vsa_node": null,
+  "ok": 2,
+  "steady_client_sec": 163.78,
+  "steady_server_sec": 161.15,
+  "steady_s_per_it": 33.15,
+  "kernel_ok": false,
+  "status": "ok"
+ },
+ {
+  "variant": "kernel",
+  "keep": 5.0,
+  "use_kernel": true,
+  "shots": [
+   {
+    "shot": 1,
+    "client_sec": 179.05,
+    "completed": true,
+    "error": "",
+    "steps": [
+     [
+      "0",
+      "dense"
+     ],
+     [
+      "1",
+      "sparse"
+     ],
+     [
+      "2",
+      "sparse"
+     ],
+     [
+      "3",
+      "sparse"
+     ]
+    ],
+    "summary": [
+     [
+      "0",
+      "28.4",
+      "50",
+      "0.567",
+      "dense"
+     ],
+     [
+      "1",
+      "38.8",
+      "50",
+      "0.776",
+      "sparse"
+     ],
+     [
+      "2",
+      "26.4",
+      "50",
+      "0.528",
+      "sparse"
+     ]
+    ],
+    "plan": [
+     "seq=39742 padded=44736 tiles=699 prefix_tiles=39"
+    ],
+    "kernel_ok": [
+     "77"
+    ],
+    "kernel_fail": 0,
+    "server_sec": 177.57,
+    "exception": 0,
+    "oom": 0,
+    "s_per_it": [
+     33.49,
+     39.37,
+     35.59,
+     33.87,
+     34.83
+    ],
+    "load_shape": [
+     {
+      "usable": 14364.13,
+      "loaded": 14143.61,
+      "offloaded": 5852.54,
+      "patches": 0
+     },
+     {
+      "usable": 7517.78,
+      "loaded": 577.08,
+      "offloaded": 0.0,
+      "patches": 0
+     },
+     {
+      "usable": 6787.86,
+      "loaded": 4966.19,
+      "offloaded": 0.0,
+      "patches": 0
+     }
+    ]
+   },
+   {
+    "shot": 2,
+    "client_sec": 157.7,
+    "completed": true,
+    "error": "",
+    "steps": [],
+    "summary": [
+     [
+      "3",
+      "26.5",
+      "50",
+      "0.531",
+      "sparse"
+     ]
+    ],
+    "plan": [],
+    "kernel_ok": [],
+    "kernel_fail": 0,
+    "server_sec": 155.68,
+    "exception": 0,
+    "oom": 0,
+    "s_per_it": [
+     33.46,
+     32.11,
+     31.83,
+     31.72,
+     31.92
+    ],
+    "load_shape": [
+     {
+      "usable": 14287.04,
+      "loaded": 14066.52,
+      "offloaded": 5929.63,
+      "patches": 0
+     },
+     {
+      "usable": 7517.78,
+      "loaded": 577.08,
+      "offloaded": 0.0,
+      "patches": 0
+     },
+     {
+      "usable": 6787.86,
+      "loaded": 4966.19,
+      "offloaded": 0.0,
+      "patches": 0
+     }
+    ]
+   }
+  ],
+  "width": 1344,
+  "height": 768,
+  "frames": 124,
+  "vsa_node": "138",
+  "ok": 2,
+  "steady_client_sec": 157.7,
+  "steady_server_sec": 155.68,
+  "steady_s_per_it": 31.92,
+  "kernel_ok": false,
+  "status": "ok"
+ }
+]
