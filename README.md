@@ -142,6 +142,10 @@ B70, and a tiling change alone can drop it 15x.** Closing that gap would make sp
 real end-to-end win on this class of hardware — which matters precisely because these cards have
 32 GB of VRAM and a modest compute budget, i.e. exactly the trade-off where sparsity pays.
 
+## Questions
+
+Questions, repro mismatches, or tests you'd like to see -> open an [issue](https://github.com/lygsam75-buddy/xpu-tile-skip-attention/issues/new).
+
 ## Provenance and license
 
 Kernel and benchmark code here were written for this investigation and are licensed
